@@ -48,7 +48,7 @@
           行き先都道府県
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"memory-access"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"memory-prefecture"}) %>
         <div class="weight-bold-text">
           シーン
           <span class="indispensable">必須</span>
