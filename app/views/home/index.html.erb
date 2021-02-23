@@ -1,2 +1,87 @@
-思い出を登録する
-思い出を検索する
+<h1>
+<%=link_to '思い出を登録する', new_memory_path, class:"back-btn" %>
+</h2>
+
+<h1>
+  思い出を検索する
+</h1>
+<%= search_form_for @p, url: memories_search_path do |f| %>
+  <%= f.label :place_eq, '場所' %>
+  <%= f.collection_select :place_eq, @memory_place, :place, :place,  include_blank: '指定なし' %>
+  <br>
+  <div class="weather" >
+  <%= f.label :weather, '天気：' %>
+  <%= f.radio_button :weather_id_eq, '1' %>
+  指定なし
+  <%= f.radio_button :weather_id_eq, '2' %>
+  快晴
+  <%= f.radio_button :weather_id_eq, '3' %>
+  晴れ
+  <%= f.radio_button :weather_id_eq, '4' %>
+  曇り
+  <%= f.radio_button :weather_id_eq, '5' %>
+  雨
+  <%= f.radio_button :weather_id_eq, '6' %>
+  雪
+  <%= f.radio_button :weather_id_eq, '7' %>
+  強風
+  <%= f.radio_button :weather_id_eq, '8' %>
+  霧
+  <%= f.radio_button :weather_id_eq, '9' %>
+  嵐
+  <%= f.radio_button :weather_id_eq, '10' %>
+  そのた
+</div>
+
+<div class="scene" >
+  <%= f.label :scene, 'シーン：' %>
+  <%= f.radio_button :scene_id_eq, '1' %>
+  指定なし
+  <%= f.radio_button :scene_id_eq, '2' %>
+  旅行
+  <%= f.radio_button :scene_id_eq, '3' %>
+  デート
+  <%= f.radio_button :scene_id_eq, '4' %>
+  グルメ
+  <%= f.radio_button :scene_id_eq, '5' %>
+  結婚式
+  <%= f.radio_button :scene_id_eq, '6' %>
+  スポーツ
+  <%= f.radio_button :scene_id_eq, '7' %>
+  エンタメ
+  <%= f.radio_button :scene_id_eq, '8' %>
+  勉強
+  <%= f.radio_button :scene_id_eq, '9' %>
+  出張
+  <%= f.radio_button :scene_id_eq, '10' %>
+  その他
+</div>
+<div class="price" >
+  <%= f.label :price, '値段：' %>
+  <%= f.radio_button :price_id_eq, '1' %>
+  指定なし
+  <%= f.radio_button :price_id_eq, '2' %>
+  〜1000
+  <%= f.radio_button :price_id_eq, '3' %>
+  1000〜2000
+  <%= f.radio_button :price_id_eq, '4' %>
+  2000〜3000
+  <%= f.radio_button :price_id_eq, '5' %>
+  3000〜4000
+  <%= f.radio_button :price_id_eq, '6' %>
+  4000〜5000
+  <%= f.radio_button :price_id_eq, '7' %>
+  5000〜6000
+  <%= f.radio_button :price_id_eq, '8' %>
+  6000〜7000
+  <%= f.radio_button :price_id_eq, '9' %>
+  7000〜8000
+  <%= f.radio_button :price_id_eq, '10' %>
+  8000〜9000
+   <%= f.radio_button :price_id_eq, '11' %>
+  9000〜10000
+  <%= f.radio_button :price_id_eq, '12' %>
+  10000〜
+</div>
+  <%= f.submit '検索' %>
+<% end %>
