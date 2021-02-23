@@ -39,16 +39,15 @@ Things you may want to cover:
 ## 新規投稿
 ### ▷左上の”思い出を登録する”をクリック→「登録する」
 ### ▷投稿が完了するとトップページへ遷移する
-[![Image from Gyazo](https://i.gyazo.com/308bfddc9af81e92d2c4acb697ed5d2d.gif)](https://gyazo.com/308bfddc9af81e92d2c4acb697ed5d2d)
+[![Image from Gyazo](https://i.gyazo.com/92db5b4ec2e0dfd0fb68a938a4fe56df.gif)](https://gyazo.com/92db5b4ec2e0dfd0fb68a938a4fe56df)
 
 ## 詳細検索機能
 ### ▷詳細選択すると条件に合う検索結果が表示される
-[![Image from Gyazo](https://i.gyazo.com/1481724fb82968bd19fe3744d5c674da.gif)](https://gyazo.com/1481724fb82968bd19fe3744d5c674da)
+[![Image from Gyazo](https://i.gyazo.com/10beda4a76a2a7dca0ad7c9ceab792b1.gif)](https://gyazo.com/10beda4a76a2a7dca0ad7c9ceab792b1)
 
 ## マイページ機能
 ### ▷トップページ右上の”マイページ”より、自分の投稿を参照できる
-[![Image from Gyazo](https://i.gyazo.com/f396f81cfe80393a5827bad211e099a7.gif)](https://gyazo.com/f396f81cfe80393a5827bad211e099a7)
-
+[![Image from Gyazo](https://i.gyazo.com/5a9801807c3aeb0c29fbf6f8326ed0e9.gif)](https://gyazo.com/5a9801807c3aeb0c29fbf6f8326ed0e9)
 
 # 目指した課題解決
 ## 
@@ -93,7 +92,7 @@ has_many :memories
 | day                 | integer   | null: false               |
 | place               | string    | null: false               |
 | weather_id          | integer   | null: false               |
-| access_id           | integer   | null: false               |
+| prefecture_id       | integer   | null: false               |
 | scene_id            | integer   | null: false               |
 | price_id            | integer   | null: false               |
 | with_who            | string    | null: false               |
@@ -104,8 +103,8 @@ has_many :memories
 belongs_to :user
 
 # ローカルでの動作方法
-### $ git clone https://github.com/splashkida/memory-app
-### $ cd global-day
+### $ git clone https://github.com/splashkida/omoidebox
+### $ cd omoidebox
 ### $ bundle install
 ### $ rails db:create
 ### $ rails db:migrate
