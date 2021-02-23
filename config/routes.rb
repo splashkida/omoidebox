@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :memories, only: [:new, :index, :show, :create]
+  resources :users, only: :show
 end
