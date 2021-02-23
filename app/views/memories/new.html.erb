@@ -1,0 +1,82 @@
+<div class="memory-contents">
+  <header class="memory-header">
+    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="memory-main">
+    <h2 class="memory-title">思い出情報を入力</h2>
+    <%= form_with(model: @memory, local: true) do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <%# 思い出画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        とっておきの一枚
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /思い出画像 %>
+    <%# 思い出の詳細 %>
+    <div class="memory-detail">
+      <div class="weight-bold-text">思い出の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          年月日
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :year, class:"year-input", id:"memory-year", placeholder:"例）2021" %>
+        <%= f.text_field :month, class:"monthe-input", id:"memory-month", placeholder:"例）2" %>
+        <%= f.text_field :day, class:"day-input", id:"memory-day", placeholder:"例）2" %>
+        <div class="weight-bold-text">
+          場所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :place, class:"place-input", id:"memory-place", placeholder:"例）◯△温泉" %>
+        <div class="weight-bold-text">
+          天気
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"select-box", id:"memory-weather"}) %>
+        <div class="weight-bold-text">
+          行き先都道府県
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"memory-access"}) %>
+        <div class="weight-bold-text">
+          シーン
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:scene_id, Scene.all, :id, :name, {}, {class:"select-box", id:"memory-scene"}) %>
+        <div class="weight-bold-text">
+          予算
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"memory-price"}) %> 
+        <div class="weight-bold-text">
+          誰と行ったか
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :with_who, class:"memory-with-who", id:"memory-with-who", placeholder:"いとこのミイちゃん" ,maxlength:"100" %>
+        <div class="weight-bold-text">
+          コメント
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :comment, class:"memory-comment", id:"memory-comment", placeholder:"思い出の詳細　（例　雪が降って綺麗だった。また行きたい。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
