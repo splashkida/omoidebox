@@ -1,6 +1,5 @@
 <div class="memory-contents">
   <header class="memory-header">
-    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
 
   </header>
   <div class="memory-main">
@@ -19,7 +18,8 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"memory_image" %>
+        <div id="image-list"></div>
       </div>
     </div>
     <%# /思い出画像 %>
