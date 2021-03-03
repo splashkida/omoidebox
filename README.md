@@ -32,7 +32,10 @@ Things you may want to cover:
 ### すんなり思い出せないおもいでを、条件検索によって詳細が分かるアプリケーション
 
 # URL
-## ここにURLを貼る
+## https://omoidebox.herokuapp.com/
+### Basic認証
+#### ユーザー名：admin
+#### パスワード：2222
 
 # 利用方法
 ## トップページ右上より、ログイン／新規登録
