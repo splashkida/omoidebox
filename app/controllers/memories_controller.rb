@@ -25,6 +25,10 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def edit
+    @memory = Memory.find(params[:id])
+  end
+
   def search
     @results = @p.result  # 検索条件にマッチした商品の情報を取得
   end
