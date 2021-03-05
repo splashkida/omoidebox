@@ -25,6 +25,20 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def edit
+    @memory = Memory.find(params[:id])
+    redirect_to root_path unless current_user.id == @memory.user_id
+  end
+
+  def update
+    @memory = Memory.find(params[:id])
+    if @memory.update(memory_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def search
     @results = @p.result  # 検索条件にマッチした商品の情報を取得
   end

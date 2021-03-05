@@ -35,6 +35,9 @@
         <td class="detail-value"><%= memory.with_who %></td>
       </tr>
     <%= image_tag memory.image.variant(resize: '500x500'), class: 'memory-image' if memory.image.attached? %>
+      <li>
+            <%= link_to '編集', edit_memory_path(memory.id), method: :get %>
+          </li>
       <tr>
         <th class="detail-memory">コメント</th>
         <td class="detail-value"><%= memory.comment %></td>
