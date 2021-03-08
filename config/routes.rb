@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
 
-  resources :memories, only: [:new, :index, :show, :create, :edit, :update]
+  resources :memories, only: [:new, :index, :show, :create, :edit, :update, :destroy]
   resources :users, only: :show
 end

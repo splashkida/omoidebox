@@ -39,6 +39,13 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @memory = Memory.find(params[:id])
+    if @memory.destroy
+      redirect_to root_path
+    end
+  end
+
   def search
     @results = @p.result  # 検索条件にマッチした商品の情報を取得
   end
